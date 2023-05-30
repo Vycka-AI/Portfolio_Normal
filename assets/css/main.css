@@ -2605,7 +2605,16 @@ input, select, textarea {
 			.image.left img, .image.right img {
 				width: 100%;
 			}
-
+		/*keiciu*/
+		.image.center{
+			
+			margin: 0 2rem 2rem 0;
+			top: 0.75rem;
+			max-width: 70%;
+            left: 25%;
+            margin-left: -100px;
+		}
+		/*keiciu*/
 		.image.left {
 			float: left;
 			margin: 0 2rem 2rem 0;
