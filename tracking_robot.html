@@ -44,10 +44,8 @@
 								<header class="major">
 									<h1>Tracking robot</h1>
 								</header>
-									<p>Human face and color tracking robot. Built using cheap components and 3D printed parts. 
-										Camera and algorithm optimised to have rapid response rate to object movement.
-										Project has a built GUI for setting different tracking parameters, debugging and seeing
-										visual result. A phone can be mounted to have high quality video.
+									<p> Using only 2 “MG995” servo motors, PS3 Eye camera, ATmega328P microcontroller
+										and cheap mechanical parts a robot prototype was modelled and built.
 									</p>
 									<div class="box alt">
 										<div class="row gtr-150 gtr-uniform aln-center">
@@ -60,24 +58,60 @@
 								<header class="align-center">
 									<h2>Color tracking</h2>
 								</header>
-									<p>Tracking selected color by filtering frames
-										and getting angle of the targeted colored object.
+									<p> Captured frame's color format is converted from RGB to HSV. Selected
+										object's color is found within the required HSV color space. A mask is created
+										that finds the required color in captured frame. After that erosion and dilation is 
+										carried out. After that we find the biggest contour and it's centroid coordinates. 
+										Then deviation in X and Y axes is calculated from the center of the screen and the
+										centroid coordinates. This error is sent to the microcontroller.
 									</p>
 								</header>
+								<p>
+									GUI Example of color tracking:
+								</p>
+								<div class="image fit"><img src="images/GUI_LOL.png" alt="" /></div>
+								<p>
+									Mounted phone captured video of tracking an orange:
+								</p>
 								<div class="image center"><img src="images/Orange_tracker_lowest.gif" alt="" /></div>
-								<p>LOLOLOLOL Don't know what to write</p>
-								<p>Still don't know</p>
 							</section>
 							<section class="post">
-								<header class="minor">
-									<h1>Face tracking</h1>
-									<p>Google's media pipe face detector<br />
-									is being used for high speed face tracking</p>
+								<header class="align-center">
+									<h2>Face tracking</h2>
 								</header>
-								<div class="image fit"><img src="images/Screenshot_GUI.png" alt="" /></div>
-								<div class="image center"><img src="images/Human_tracker_2.gif" alt="" /></div>
-								<p>LOLOLOLOL Don't know what to write</p>
-								<p>Still don't know</p>
+									<p> Google's "MediaPipe" api is being used for high speed face detection.
+										“MediaPipe” is used because the detection algorithm is executed very rapidly
+										(up to 100 frames per second) and face can be detected in various scale 
+										and orientation. After detecting face, the face bounding rectangle's coordinates
+										are obtained. Then center of this rectangle is found. And finally deviation from
+										frame's center point to the center of the rectangle is calculated and sent to 
+										the microcontroller.
+									</p>
+									<p>
+										GUI Example of face tracking:
+									</p>
+									<div class="image center"><img src="images/Screenshot_GUI.png" alt="" /></div>
+									<p>
+										Mounted phone captured video of tracking a human face:
+									</p>
+									<div class="image center"><img src="images/Human_tracker_2.gif" alt="" /></div>
+							</section>
+							<section class="post">
+								<header class="align-center">
+									<h2>Control system in the microcontroller</h2>
+								</header>
+									<p>
+										In this work, robot control (orientation regulation) is done by a microcontroller.
+										The input of the system is always constant - 0. The computer sends 
+										yaw and pitch error through serial communication to the microcontroller. Using 2 discrete
+										PID controllers the microcontroller tries to minimize these errors.
+										The calculated value from PID is added to the current set value of the motor.
+										Software limitation is used to prevent robot from braking it's parts.
+									</p>
+									<p>
+										Controlled system model:
+									</p>
+									<div class="image fit"><img src="images/Control_System_Tracker.png" alt="" /></div>
 							</section>
 					</div>
 
