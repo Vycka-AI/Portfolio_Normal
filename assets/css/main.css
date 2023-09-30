@@ -2685,7 +2685,63 @@ input, select, textarea {
 				align-items: center;
 				text-align: center;
 			}
-			
+			.image.fittus {
+				margin: 0 auto;
+				display: block;
+				max-width: 120%;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+				.image.fittus:first-child {
+					margin: 0 auto;
+					display: block;
+					justify-content: center;
+					align-items: center;
+					text-align: center;
+				}
+	
+				.image.fittus img {
+					margin-left: auto;
+					margin-right: auto;
+					margin-top: 20px;
+					margin-bottom: 20px;
+					min-width: 60%;
+					max-width: 80%;
+					display: block;
+					justify-content: center;
+					align-items: center;
+					text-align: center;
+				}
+				.image.fitsmol {
+					margin: 0 auto;
+					display: block;
+					max-width: 120%;
+					justify-content: center;
+					align-items: center;
+					text-align: center;
+				}
+					.image.fitsmol:first-child {
+						margin: 0 auto;
+						display: block;
+						justify-content: center;
+						align-items: center;
+						text-align: center;
+					}
+		
+					.image.fitsmol img {
+						margin-left: auto;
+						margin-right: auto;
+						margin-top: 20px;
+						margin-bottom: 20px;
+						min-width: 20%;
+						max-width: 40%;
+						display: block;
+						justify-content: center;
+						align-items: center;
+						text-align: center;
+					}
+					
 		.image.main {
 			display: block;
 			margin: 4rem 0;

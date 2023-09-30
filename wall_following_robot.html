@@ -45,114 +45,188 @@
 									<h1>Wall following robot</h1>
 								</header>
 									<p> 
-										Using 7 ultrasound sensors. Raspberry Pi 3B+. 
-										3D printed adapters for sensors, 
+										Using 7 ultrasound sensors, Raspberry Pi 3B+, servo motor for steering and a cheap car chassis, autonomous wall tracking
+										robot was built. For easier operation, robot operating system (ROS) was used. Using ROS, robot can be controlled from the outside source
+										like PS4 joystick as well as turned on for automatic mode.
 									</p>
 									<div class="box alt">
 										<div class="row gtr-150 gtr-uniform aln-center">
-											<div class="col-6"><span class="image fit"><img src="images/Photo_wall_robot_1.jpg" alt="" /></span></div>
-											<div class="col-6"><span class="image fit"><img src="images/Photo_wall_robot_2.jpg" alt="" /></span></div>
+											<div class="col-6"><span class="image fit"><img src="images/Wall_following/Photo_wall_robot_1.jpg" alt="" /></span></div>
+											<div class="col-6"><span class="image fit"><img src="images/Wall_following/Photo_wall_robot_2.jpg" alt="" /></span></div>
 										</div>
 									</div>
 							</section>
 							<section class="post">
 								<header class="align-center">
-									<h2>Motor controll</h2>
+									<h2>Motor control</h2>
 								</header>
-									<p> Blah blah blah  blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah.
-										blah blah  blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah.
-									</p>
-								</header>
-								<p>
-									ROS Node and Topic Topology for system:
-								</p>
-								<div class="image center"><img src="images/ROS_Node_Topic_Topology.png" alt="" /></div>
-								<p>
-									Here's a gif of me testing robot motors and failing ;)
-								</p>
-								<div class="image fit"><img src="images/Robot_Fell_Sad.gif" alt="" /></div>
-							</section>
-							<section class="post">
-								<header class="align-center">
-									<h2>Wall tracking algorithm</h2>
-								</header>
-									<p>Blah blah blah  blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah.
-										blah blah  blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah.
-									</p>
-									<p>
-										Example of tracking wall:
-									</p>
-									<div class="image center"><img src="images/Robot_driving.gif" alt="" /></div>
-									<!--p>
-										Mounted phone captured video of tracking a human face:
-									</p>
-									<div class="image center"><img src="images/Human_tracker_2.gif" alt="" /></div-->
-							</section>
-							<section class="post">
-								<header class="align-center">
-									<h2>Used parts</h2>
-								</header>
-									<p>Blah blah blah  blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah.
-										blah blah  blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah blah blah blah blah
-										blah blah blah blah blah blah blah blah.
-									</p>
-									<p>
-										Example of tracking wall:
+									<p> There were two motors in the chassis, one for front wheel drive, other for rear wheel drive. Using both motors is good for high speed, but
+										in this case agility and precision is needed more, that's why only front wheel drive was chosen for this project. For speed and direction
+										control L298N motor drive was used. It is controlled with 3 GPIO outputs of raspberry pi, 2 of digital outputs for direction and 1 PWM output for
+										speed control. Drive is powered by 3 lithium ion batteries which make a total voltage of over 12V.
 									</p>
 									<div class="box alt">
-										<div class="row gtr-50 aln-center gtr-uniform">
-											<div class="off-1"><span class="image fit"><img src="images/Buck Converter.jpg" alt="" /></span></div>
-											<div class="off-1"><span class="image fit"><img src="images/L298N module.jpg" alt="" /></span></div>
-											<div class="off-1"><span class="image fit"><img src="images/Ultrasound sensor.png" alt="" /></span></div>
-										</div>
-										<div class="row gtr-50 aln-center gtr-uniform">
-											<div class="col-4"><span class="image fit"><img src="images/Rasberry.png" alt="" /></span></div>
-											<div class="off-1"><span class="image fit"><img src="images/MG995 Servo.png" alt="" /></span></div>
-											<div class="col-3 off-1"><span class="image fit"><img src="images/Rotational encoder KY-040.jpg" alt="" /></span></div>
-											<div class="col-3 off-1"><span class="image fit"><img src="images/Batteries.png" alt="" /></span></div>
-											<div class="col-3 off-1"><span class="image fit"><img src="images/Battery_holder.png" alt="" /></span></div>
-											<div class="col-2 off-1"><span class="image fit"><img src="images/Power_bank.png" alt="" /></span></div>
+										<div class="row gtr-150 gtr-uniform aln-center">
+											<div class="off-1"><span class="image fittas"><img src="images/Wall_following/L298N module.jpg" title="L298N" alt="" 
+												width="auto" height="200" justify-content="center"/>
+												<div class="caption align-center">Motor drive L298N module</div>
+												</span>
+											</div>
+											<div class="off-1"><span class="image fittas"><img src="images/Wall_following/Batteries.png" title="Batteries" alt="" 
+												width="auto" height="200" justify-content="center"/>
+												<div class="caption align-center">Batteries for motors</div>
+												</span>
+											</div>
 										</div>
 									</div>
-									<!--p>
-										Mounted phone captured video of tracking a human face:
-									</p>
-									<div class="image center"><img src="images/Human_tracker_2.gif" alt="" /></div-->
-							</section>
-							<!--section class="post">
 								<header class="align-center">
-									<h2>Control system in the microcontroller</h2>
+									<h3>Servo control</h3>
 								</header>
 									<p>
-										In this work, robot control (orientation regulation) is done by a microcontroller.
-										The input of the system is always constant - 0. The computer sends 
-										yaw and pitch error through serial communication to the microcontroller. Using 2 discrete
-										PID controllers the microcontroller tries to minimize these errors.
-										The calculated value from PID is added to the current set value of the motor.
-										Software limitation is used to prevent robot from braking it's parts.
+										In order to have steering control, servo motor MG995 was used. It was mounted into chassis and used instead of previous steering
+										motor. It is powered with an output of 5V from buck converter, which was powered from 12V battery array. Servo position is controlled 
+										with a PWM signal from the raspberry pi GPIO pin.
 									</p>
+									<div class="box alt">
+										<div class="row gtr-150 gtr-uniform aln-center">
+											<div class="off-1"><span class="image fittas"><img src="images/Wall_following/MG995 Servo.png" title="MG995" alt="" 
+												width="auto" height="200" justify-content="center"/>
+												<div class="caption align-center">MG995 Servo</div>
+												</span>
+											</div>
+											<div class="off-1"><span class="image fittas"><img src="images/Wall_following/Buck Converter.jpg" title="Buck Converter" alt="" 
+												width="auto" height="200" justify-content="center"/>
+												<div class="caption align-center">Buck converter</div>
+												</span>
+											</div>
+										</div>
+									</div>
+								<header class="align-center">
+									<h3>Motor testing</h3>
+								</header>
 									<p>
-										Controlled system model:
+										Motors were wired and mounted on the chassis so testing could begin. ROS node for testing with a joystick was written, here's an
+										example of how you should not test your hardware:
 									</p>
-									<div class="image fit"><img src="images/Control_System_Tracker.png" alt="" /></div>
-							</section-->
+									<div class="image fittus"><img src="images/Wall_following/Robot_Fell_Sad.gif" alt="" /></div>
+								<header class="align-center">
+									<h3>Schematics</h3>
+								</header>
+									<p>
+										For anyone wondering, how the schematic looks, here it is down below:
+									</p>
+									<div class="image fittus"><img src="images/Wall_following/Schematics_power.png" alt="" /></div>
+							</section>
+							<section class="post">
+								<header class="align-center">
+									<h2>Sensors</h2>
+								</header>
+								<p>
+									7 Ultrasound sensors were used for collision avoidance. Custom fittings were 3D printed so the sensors could be mounted on
+									the chassis and be oriented correctly. 
+								</p>
+								<div class="box alt">
+									<div class="row gtr-150 gtr-uniform aln-center">
+										<div class="off-1"><span class="image fittas"><img src="images/Wall_following/Ultrasound sensor.png" title="Ultrasound sensor" alt="" 
+											width="auto" height="200" justify-content="center"/>
+											<div class="caption align-center">Ultrasound sensor</div>
+											</span>
+										</div>
+										<div class="off-1"><span class="image fittas"><img src="images/Wall_following/Adapter_sensor.png" title="Sensor fitting" alt="" 
+											width="auto" height="200" justify-content="center"/>
+											<div class="caption align-center">Sensor fitting for the side</div>
+											</span>
+										</div>
+									</div>
+								</div>
+								<p>
+									Here's how a 3D model of the front sensors mounted looks like:
+								</p>
+								<div class="off-1"><span class="image fittus"><img src="images/Wall_following/Sensors mounted.png" title="Sensor fitting" alt="" 
+									width="auto" height="auto" justify-content="center"/>
+									</span>
+								</div>
+								<header class="align-center">
+									<h3>Encoder</h3>
+								</header>
+									<p>
+										In order to have a stable speed control, encoder can be used. In this specific case, rotary encoder KY-040 was used. It was
+										mounted on the rear axis and specific 3D parts had to be printed like gears and holders for it to be used efficiently.
+									</p>
+									<div class="row gtr-150 gtr-uniform aln-center">
+										<div class="off-1"><span class="image fittas"><img src="images/Wall_following/Rotational encoder KY-040.jpg" title="KY-040" alt="" 
+											width="auto" height="200" justify-content="center"/>
+											<div class="caption align-center">Encoder KY-040</div>
+											</span>
+										</div>
+										<div class="off-1"><span class="image fittas"><img src="images/Wall_following/Gear and holder for encoder.png" title="Gear and holder" alt="" 
+											width="auto" height="200" justify-content="center"/>
+											<div class="caption align-center">Gear and holder for encoder</div>
+											</span>
+										</div>
+									</div>
+									<header class="align-center">
+										<h3>Schematics</h3>
+									</header>
+									<p>
+										Here are some schematics for connecting these sensors:
+									</p>
+									<div class="off-1"><span class="image fittus"><img src="images/Wall_following/Schematics_sensors.png" title="Sensors scheme" alt="" 
+										width="auto" height="auto" justify-content="center"/>
+										</span>
+									</div>
+							</section>
+							<section>
+								<header class="align-center">
+									<h2>Algorithm</h2>
+								</header>
+							<p>
+								Software was written for use with ROS Kinetic, using ROS improves scalability of the project. For this reason raspberry pi was running Ubuntu 16.04 version.
+								To sum up the algorithm quickly, robot was using a PID controller for side wall tracking, robot had to maintain a set distance between a side sensor and a wall.
+								 Front and back sensors were used for collision avoidance.<br>
+								ROS Node and Topic Topology for system:
+							</p>
+							<div class="image fittus"><img src="images/Wall_following/ROS_Node_Topic_Topology.png" alt="" /></div>
+							<p>
+								Example of tracking wall:
+							</p>
+							<div class="image fittus"><img src="images/Wall_following/Robot_driving.gif" alt="" /></div>
+							<P>
+								Code snippet for PID controller:
+							</P>
+							<div class="image fittus"><img src="images/Wall_following/PID.png" alt="" /></div>
+						</section>
+						<section>
+							<header class="align-center">
+								<h2>Other not mentioned parts</h2>
+							</header>
+							<div class="box alt">
+								<div class="row gtr-150 gtr-uniform aln-center">
+									<div class="off-1"><span class="image fittas"><img src="images/Wall_following/Rasberry.png" title="Raspberry pi 3b+" alt="" 
+										width="auto" height="200" justify-content="center"/>
+										<div class="caption align-center">Raspberry pi 3b+</div>
+										</span>
+									</div>
+									<div class="off-1"><span class="image fittas"><img src="images/Wall_following/Battery_holder.png" title="Battery holder" alt="" 
+										width="auto" height="200" justify-content="center"/>
+										<div class="caption align-center">Battery holder</div>
+										</span>
+									</div>
+								</div>
+								<div class="row gtr-150 gtr-uniform aln-center">
+									<div class="off-1"><span class="image fittas"><img src="images/Wall_following/Power_bank.png" title="Power bank" alt="" 
+										width="auto" height="200" justify-content="center"/>
+										<div class="caption align-center">Power bank for powering raspberry and sensors</div>
+										</span>
+									</div>
+									<div class="off-1"><span class="image fittas"><img src="images/Wall_following/Chassis.png" title="Robot chasis" alt="" 
+										width="auto" height="200" justify-content="center"/>
+										<div class="caption align-center">Initial car chassis that was converted into a robot</div>
+										</span>
+									</div>
+								</div>
+							</div>
+						</section>
 					</div>
 
 				<!-- Footer -->

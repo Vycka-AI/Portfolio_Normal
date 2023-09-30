@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic Page - Massively by HTML5 UP</title>
+		<title>Noisemaker project</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Massively</a>
+						<a href="index.html" class="logo">Projects</a>
 					</header>
 
 				<!-- Nav -->
@@ -28,7 +28,7 @@
 							<li><a href="index.html">Projects</a></li>
 							<li><a href="About_me.html">About me</a></li>
 							<li><a href="Other.html">other</a></li>
-							<li class="active"><a href="generic_synthesizer_project.html">Synthesizer</a></li>
+							<li class="active"><a href="generic_synthesizer_project.html">Noisemaker</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="https://github.com/Vycka-AI" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
@@ -42,16 +42,48 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
+									<span class="date">2020</span>
+									<h1>Noisemaker with step sequencer</h1>
 								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
+								<span class="image fittus"><img src="images/Step_seq/Synth.png" alt="" /></span>
+								<p> This project started as a simple APC synth, which uses two NE 555 timers. You could vary pitch and tone with two potentiometers in
+									the circuit. This was a cool project, but I wanted to upgrade it and make it sound more fun. That's why step sequencer CD4017 was added to the mix.
+									It's rate of stepping could be controlled with another NE 555 timer. 8 out of 10 step sequencer outputs were used so it can make a beat that's more
+									comfortable for humans to listen. Each output is fed into it's designated potentiometer and an LED for visualizing. Signal from potentiometer is fed into the APC synth, which's
+									output is fed into a speaker and sound is heard. Buttons for each step were added so, if wanted, a capacitor could be connected in parallel for
+									fade in effect.
+								</p>
+							</section>
+							<section>
+								<h2 class="align-center">Schematics</h2>
+								<p>
+									Here's a schematic of the same step sequencer. It was more intended to be used as a PCB:
+								</p>
+								<span class="image fittus"><img src="images/Step_seq/Electrical schematic.png" alt="" /></span>
+								<p>
+									Here's a PCB model:
+								</p>
+								<span class="image fittus"><img src="images/Step_seq/PCB.png" alt="" /></span>
+							</section>
+							<section>
+								<h2 class="align-center">Build process</h2>
+								<p>
+									Real project was soldered on a prototyping board
+								</p>
+								<span class="image fitsmol"><img src="images/Step_seq/Process.png" alt="" /></span>
+								<p>
+									A 3D model was made for the enclosure
+								</p>
+								<span class="image fitsmol"><img src="images/Step_seq/3D_model.png" alt="" /></span>
+							</section>
+							<section>
+								<h2 class="align-center">Final product</h2>
+								<p>
+									Everything was assembled into a final product, here's an example of me using it:
+								</p>
+								<iframe class="image fittus" width="720" height="480" justify-content="center" align-items="center" display="block"
+								src="https://www.youtube.com/embed/etjCmI96m7U">
+								</iframe> 
 							</section>
 
 					</div>
